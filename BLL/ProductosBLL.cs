@@ -76,6 +76,43 @@ namespace EntregaParcialUno.BLL
         }
 
         public static Productos Buscar(int id)
+        {
+            Contexto db = new Contexto();
+            Productos producto = new Productos();
+            try
+            {
+                producto = db.Producto.Find(id);
+            }
+            catch
+            {
+                throw;
+
+            }
+            finally
+            {
+                db.Dispose();
+            }
+            return producto;
+        }
+        public static List<Productos> GetList(Expression<Func<Productos, bool>> producto)
+        {
+            List<Productos> Lista = new List<Productos>();
+            Contexto db = new Contexto();
+
+            try
+            {
+                Lista = db.Producto.Where(producto).ToList();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                db.Dispose();
+            }
+            return Lista;
+        }
 
 
 
