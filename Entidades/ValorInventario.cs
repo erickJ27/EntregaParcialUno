@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntregaParcialUno.Entidades
 {
-    class ValorInventario
+    public class ValorInventario
     {
         public decimal ValorTotalInventario { get; set; }
 
