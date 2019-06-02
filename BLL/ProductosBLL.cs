@@ -12,7 +12,7 @@ namespace EntregaParcialUno.BLL
 {
     public class ProductosBLL
     {
-        public static bool Guardar(productos producto)
+        public static bool Guardar(Productos producto)
         {
             bool paso = false;
 
@@ -33,5 +33,51 @@ namespace EntregaParcialUno.BLL
 
             return paso;
         }
+
+        public static bool Modificar(Productos producto)
+        {
+            bool paso = false;
+            Contexto db = new Contexto();
+
+            try
+            {
+                db.Entry(producto).State = EntityState.Modified;
+                paso = (db.SaveChanges() > 0);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.Dispose();
+            }
+            return paso;
+        }
+        public static bool Eliminar(int id)
+        {
+            bool paso = false;
+            Contexto db = new Contexto();
+            try
+            {
+                var eliminar = db.Producto.Find(id);
+
+                paso = (db.SaveChanges() > 0);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.Dispose();
+            }
+            return paso;
+        }
+
+        public static Productos Buscar(int id)
+
+
+
     }
 }

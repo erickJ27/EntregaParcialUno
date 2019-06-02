@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntregaParcialUno.Entidades
 {
-    public class productos
+    public class Productos
     {
         [Key]
         public int Id { get; set; }
@@ -16,7 +16,7 @@ namespace EntregaParcialUno.Entidades
         public decimal Costo { get; set; }
         public decimal ValorInventario { get; set; }
 
-        public productos()
+        public Productos()
         {
             Id = 0;
             Descripcion = string.Empty;

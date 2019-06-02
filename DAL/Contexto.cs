@@ -10,7 +10,7 @@ namespace EntregaParcialUno.DAL
 {
     public class Contexto :DbContext
     {
-        public DbSet<productos> Producto { get; set; }
+        public DbSet<Productos> Producto { get; set; }
         public DbSet<ValorInventario> ValorInventarioC { get; set; }
 
         public Contexto() : base("ConStr")
