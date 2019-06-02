@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ProductosBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\productos.cs" />
     <Compile Include="Entidades\ValorInventario.cs" />
@@ -109,9 +110,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\search3-icon.png" />
   </ItemGroup>
