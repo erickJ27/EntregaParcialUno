@@ -35,20 +35,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ProductoIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.DescripcionTextBox = new System.Windows.Forms.TextBox();
-            this.ExistenciaNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.CostoNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.ValorInventarioNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
+            this.ValorInventarioNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.CostoNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ExistenciaNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.DescripcionTextBox = new System.Windows.Forms.TextBox();
+            this.IdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductoIdNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ExistenciaNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CostoNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ValorInventarioNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostoNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExistenciaNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -106,7 +106,7 @@
             this.groupBox1.Controls.Add(this.CostoNumericUpDown);
             this.groupBox1.Controls.Add(this.ExistenciaNumericUpDown);
             this.groupBox1.Controls.Add(this.DescripcionTextBox);
-            this.groupBox1.Controls.Add(this.ProductoIdNumericUpDown);
+            this.groupBox1.Controls.Add(this.IdNumericUpDown);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
@@ -117,41 +117,6 @@
             this.groupBox1.Size = new System.Drawing.Size(394, 314);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            // 
-            // ProductoIdNumericUpDown
-            // 
-            this.ProductoIdNumericUpDown.Location = new System.Drawing.Point(138, 29);
-            this.ProductoIdNumericUpDown.Name = "ProductoIdNumericUpDown";
-            this.ProductoIdNumericUpDown.Size = new System.Drawing.Size(138, 20);
-            this.ProductoIdNumericUpDown.TabIndex = 5;
-            // 
-            // DescripcionTextBox
-            // 
-            this.DescripcionTextBox.Location = new System.Drawing.Point(138, 74);
-            this.DescripcionTextBox.Name = "DescripcionTextBox";
-            this.DescripcionTextBox.Size = new System.Drawing.Size(138, 20);
-            this.DescripcionTextBox.TabIndex = 6;
-            // 
-            // ExistenciaNumericUpDown
-            // 
-            this.ExistenciaNumericUpDown.Location = new System.Drawing.Point(138, 122);
-            this.ExistenciaNumericUpDown.Name = "ExistenciaNumericUpDown";
-            this.ExistenciaNumericUpDown.Size = new System.Drawing.Size(138, 20);
-            this.ExistenciaNumericUpDown.TabIndex = 7;
-            // 
-            // CostoNumericUpDown
-            // 
-            this.CostoNumericUpDown.Location = new System.Drawing.Point(138, 170);
-            this.CostoNumericUpDown.Name = "CostoNumericUpDown";
-            this.CostoNumericUpDown.Size = new System.Drawing.Size(138, 20);
-            this.CostoNumericUpDown.TabIndex = 8;
-            // 
-            // ValorInventarioNumericUpDown
-            // 
-            this.ValorInventarioNumericUpDown.Location = new System.Drawing.Point(138, 216);
-            this.ValorInventarioNumericUpDown.Name = "ValorInventarioNumericUpDown";
-            this.ValorInventarioNumericUpDown.Size = new System.Drawing.Size(138, 20);
-            this.ValorInventarioNumericUpDown.TabIndex = 9;
             // 
             // EliminarButton
             // 
@@ -201,6 +166,41 @@
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
             // 
+            // ValorInventarioNumericUpDown
+            // 
+            this.ValorInventarioNumericUpDown.Location = new System.Drawing.Point(138, 216);
+            this.ValorInventarioNumericUpDown.Name = "ValorInventarioNumericUpDown";
+            this.ValorInventarioNumericUpDown.Size = new System.Drawing.Size(138, 20);
+            this.ValorInventarioNumericUpDown.TabIndex = 9;
+            // 
+            // CostoNumericUpDown
+            // 
+            this.CostoNumericUpDown.Location = new System.Drawing.Point(138, 170);
+            this.CostoNumericUpDown.Name = "CostoNumericUpDown";
+            this.CostoNumericUpDown.Size = new System.Drawing.Size(138, 20);
+            this.CostoNumericUpDown.TabIndex = 8;
+            // 
+            // ExistenciaNumericUpDown
+            // 
+            this.ExistenciaNumericUpDown.Location = new System.Drawing.Point(138, 122);
+            this.ExistenciaNumericUpDown.Name = "ExistenciaNumericUpDown";
+            this.ExistenciaNumericUpDown.Size = new System.Drawing.Size(138, 20);
+            this.ExistenciaNumericUpDown.TabIndex = 7;
+            // 
+            // DescripcionTextBox
+            // 
+            this.DescripcionTextBox.Location = new System.Drawing.Point(138, 74);
+            this.DescripcionTextBox.Name = "DescripcionTextBox";
+            this.DescripcionTextBox.Size = new System.Drawing.Size(138, 20);
+            this.DescripcionTextBox.TabIndex = 6;
+            // 
+            // IdNumericUpDown
+            // 
+            this.IdNumericUpDown.Location = new System.Drawing.Point(138, 29);
+            this.IdNumericUpDown.Name = "IdNumericUpDown";
+            this.IdNumericUpDown.Size = new System.Drawing.Size(138, 20);
+            this.IdNumericUpDown.TabIndex = 5;
+            // 
             // rProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,10 +213,10 @@
             this.Text = "Registro de productos";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductoIdNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ExistenciaNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CostoNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ValorInventarioNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostoNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExistenciaNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,6 +237,6 @@
         private System.Windows.Forms.NumericUpDown CostoNumericUpDown;
         private System.Windows.Forms.NumericUpDown ExistenciaNumericUpDown;
         private System.Windows.Forms.TextBox DescripcionTextBox;
-        private System.Windows.Forms.NumericUpDown ProductoIdNumericUpDown;
+        private System.Windows.Forms.NumericUpDown IdNumericUpDown;
     }
 }
