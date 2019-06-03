@@ -179,6 +179,16 @@ namespace EntregaParcialUno.UI.Registros
         {
             CalcularValor();
         }
+
+        private void UbicacionButton_Click(object sender, EventArgs e)
+        {
+            rUbicacion ubi = new rUbicacion();
+            ubi.ShowDialog();
+        }
+
+        
+
+        
     }
 }
 
