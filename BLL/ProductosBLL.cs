@@ -57,20 +57,22 @@ namespace EntregaParcialUno.BLL
         public static bool Eliminar(int id)
         {
             bool paso = false;
-            Contexto db = new Contexto();
+            Contexto contexto = new Contexto();
             try
             {
-                var eliminar = db.Producto.Find(id);
+                Productos producto = contexto.Producto.Find(id);
 
-                paso = (db.SaveChanges() > 0);
+                contexto.Producto.Remove(producto);
+
+                if (contexto.SaveChanges() > 0)
+                {
+                    paso = true;
+                }
+                contexto.Dispose();
             }
-            catch (Exception)
+            catch(Exception)
             {
                 throw;
-            }
-            finally
-            {
-                db.Dispose();
             }
             return paso;
         }

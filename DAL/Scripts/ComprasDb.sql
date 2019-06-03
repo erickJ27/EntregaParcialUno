@@ -17,5 +17,6 @@ create table productos
 );
 create table valorInventario(
 	
+	id int primary key identity,
 	valorTotalInventario decimal
 );
