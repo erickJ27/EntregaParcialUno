@@ -8,6 +8,7 @@ using EntregaParcialUno.Entidades;
 using System.Data.Entity;
 using System.Linq.Expressions;
 
+
 namespace EntregaParcialUno.BLL
 {
     public class ValorInventarioBLL
@@ -19,7 +20,7 @@ namespace EntregaParcialUno.BLL
             Contexto db = new Contexto();
             try
             {
-                if (db.ValorInventarioC.Add(valorinventario) != null)
+                if (db.ValorInventario.Add(valorinventario) != null)
                     paso = db.SaveChanges() > 0;
             }
             catch (Exception)
@@ -32,17 +33,19 @@ namespace EntregaParcialUno.BLL
             }
 
             return paso;
+
         }
-        public static List<ValorInventario> GetList(Expression<Func<ValorInventario, bool>> valorinventario)
+        public static bool Modificar(ValorInventario valorinvetario)
         {
-            List<ValorInventario> Lista = new List<ValorInventario>();
+            bool paso = false;
             Contexto db = new Contexto();
 
             try
             {
-                Lista = db.ValorInventarioC.Where(valorinventario).ToList();
+                db.Entry(valorinvetario).State = EntityState.Modified;
+                paso = (db.SaveChanges() > 0);
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }
@@ -50,7 +53,27 @@ namespace EntregaParcialUno.BLL
             {
                 db.Dispose();
             }
-            return Lista;
+            return paso;
+        }
+      
+        public static ValorInventario Buscar(int id)
+        {
+            Contexto db = new Contexto();
+            ValorInventario valorinvetario = new ValorInventario();
+            try
+            {
+                valorinvetario = db.ValorInventario.Find(id);
+            }
+            catch
+            {
+                throw;
+
+            }
+            finally
+            {
+                db.Dispose();
+            }
+            return valorinvetario;
         }
     }
 }

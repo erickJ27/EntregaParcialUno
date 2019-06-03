@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cValorInventario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ValorTotalInvetarioTextBox = new System.Windows.Forms.TextBox();
             this.ActualizarButton = new System.Windows.Forms.Button();
+            this.ValorTotalInvetarioTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +47,25 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // ActualizarButton
+            // 
+            this.ActualizarButton.Image = global::EntregaParcialUno.Properties.Resources.reload_icon;
+            this.ActualizarButton.Location = new System.Drawing.Point(145, 74);
+            this.ActualizarButton.Name = "ActualizarButton";
+            this.ActualizarButton.Size = new System.Drawing.Size(75, 63);
+            this.ActualizarButton.TabIndex = 2;
+            this.ActualizarButton.UseVisualStyleBackColor = true;
+            this.ActualizarButton.Click += new System.EventHandler(this.ActualizarButton_Click);
+            // 
+            // ValorTotalInvetarioTextBox
+            // 
+            this.ValorTotalInvetarioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ValorTotalInvetarioTextBox.Location = new System.Drawing.Point(27, 84);
+            this.ValorTotalInvetarioTextBox.Name = "ValorTotalInvetarioTextBox";
+            this.ValorTotalInvetarioTextBox.Size = new System.Drawing.Size(100, 35);
+            this.ValorTotalInvetarioTextBox.TabIndex = 1;
+            this.ValorTotalInvetarioTextBox.TextChanged += new System.EventHandler(this.ValorTotalInvetarioTextBox_TextChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -56,23 +75,6 @@
             this.label1.Size = new System.Drawing.Size(99, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Valor total \r\nde inventario";
-            // 
-            // ValorTotalInvetarioTextBox
-            // 
-            this.ValorTotalInvetarioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ValorTotalInvetarioTextBox.Location = new System.Drawing.Point(27, 84);
-            this.ValorTotalInvetarioTextBox.Name = "ValorTotalInvetarioTextBox";
-            this.ValorTotalInvetarioTextBox.Size = new System.Drawing.Size(100, 35);
-            this.ValorTotalInvetarioTextBox.TabIndex = 1;
-            // 
-            // ActualizarButton
-            // 
-            this.ActualizarButton.Image = global::EntregaParcialUno.Properties.Resources.reload_icon;
-            this.ActualizarButton.Location = new System.Drawing.Point(145, 74);
-            this.ActualizarButton.Name = "ActualizarButton";
-            this.ActualizarButton.Size = new System.Drawing.Size(75, 63);
-            this.ActualizarButton.TabIndex = 2;
-            this.ActualizarButton.UseVisualStyleBackColor = true;
             // 
             // cValorInventario
             // 

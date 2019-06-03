@@ -22,7 +22,7 @@ namespace EntregaParcialUno.UI.Registros
         {
             IdNumericUpDown.Value = 0;
             DescripcionTextBox.Text = string.Empty;
-            ExistenciaNumericUpDown.Value = 0;
+            ExistenciaNumericUpDown.Value= 0;
             CostoNumericUpDown.Value = 0;
             ValorInventarioTextBox.Text = string.Empty;
 
@@ -37,7 +37,7 @@ namespace EntregaParcialUno.UI.Registros
             Productos producto = new Productos();
             producto.Id = (int)IdNumericUpDown.Value;
             producto.Descripcion = DescripcionTextBox.Text;
-            producto.Existencia =(int)ExistenciaNumericUpDown.Value; ;
+            producto.Existencia =(int)ExistenciaNumericUpDown.Value;
             producto.Costo = CostoNumericUpDown.Value;
             producto.ValorInventario = Convert.ToDecimal(ValorInventarioTextBox.Text);
             return producto;
@@ -135,7 +135,9 @@ namespace EntregaParcialUno.UI.Registros
 
             IdNumericUpDown.Value = productos.Id;
             DescripcionTextBox.Text = productos.Descripcion;
-            ExistenciaNumericUpDown.Value = productos.Existencia;
+           ExistenciaNumericUpDown.Value = productos.Existencia;
+            CostoNumericUpDown.Value = productos.Costo;
+
 
 
         }
@@ -158,22 +160,25 @@ namespace EntregaParcialUno.UI.Registros
         }
         private void CalcularValor()
         {
-            if(CostoNumericUpDown.Value >0 && ExistenciaNumericUpDown.Value > 0)
-            {
-                ValorInventarioTextBox.Text = Convert.ToString(CostoNumericUpDown.Value * ExistenciaNumericUpDown.Value);
-    }
-}
+            if (ExistenciaNumericUpDown.Value > 0 && ExistenciaNumericUpDown.Value > 0)
+               ValorInventarioTextBox.Text = Convert.ToString(Convert.ToSingle(CostoNumericUpDown.Value) * Convert.ToSingle(ExistenciaNumericUpDown.Value));
 
-        private void ValorInventarioTextBox_TextChanged(object sender, EventArgs e)
-        {
-            CalcularValor();
-        }
+            if (CostoNumericUpDown.Value > 0 && CostoNumericUpDown.Value == 0)
+                ValorInventarioTextBox.Text = "0";
 
-        private void CostoNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            CalcularValor();
+            if (CostoNumericUpDown.Value == 0 && CostoNumericUpDown.Value > 0)
+                ValorInventarioTextBox.Text = "0";
+
+            if (CostoNumericUpDown.Value == 0 && ExistenciaNumericUpDown.Value == 0)
+                ValorInventarioTextBox.Text = "0";
         }
 
 
+
+        private void ExistenciaNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CalcularValor();
+        }
     }
 }
+

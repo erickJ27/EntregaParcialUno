@@ -10,12 +10,12 @@ namespace EntregaParcialUno.Entidades
     public class ValorInventario
     {
         [Key]
-        public int id { get; set; }  
+        public int ValorInventarioId { get; set; }  
         public decimal ValorTotalInventario { get; set; }
 
-        ValorInventario()
+        public ValorInventario()
         {
-            id = 0;
+            ValorInventarioId = 0;
             ValorTotalInventario = 0;
         }
     }
