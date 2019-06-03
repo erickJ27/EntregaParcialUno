@@ -24,7 +24,7 @@ namespace EntregaParcialUno.UI.Registros
             DescripcionTextBox.Text = string.Empty;
             ExistenciaNumericUpDown.Value = 0;
             CostoNumericUpDown.Value = 0;
-            ValorInventarioNumericUpDown.Value = 0;
+            ValorInventarioTextBox.Text = string.Empty;
 
         }
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace EntregaParcialUno.UI.Registros
             producto.Descripcion = DescripcionTextBox.Text;
             producto.Existencia =(int)ExistenciaNumericUpDown.Value; ;
             producto.Costo = CostoNumericUpDown.Value;
-            producto.ValorInventario = ValorInventarioNumericUpDown.Value;
+            producto.ValorInventario = Convert.ToDecimal(ValorInventarioTextBox);
             return producto;
 
         }
@@ -73,12 +73,7 @@ namespace EntregaParcialUno.UI.Registros
                 CostoNumericUpDown.Focus();
                 paso = false;
             }
-            if (ValorInventarioNumericUpDown.Value == 0)
-            {
-                MyErrorProvider.SetError(ValorInventarioNumericUpDown, "El campo Existencia no puede estar en 0");
-                ValorInventarioNumericUpDown.Focus();
-                paso = false;
-            }
+            
             return paso;
         }
         private void GuardarButton_Click(object sender, EventArgs e)
@@ -156,5 +151,24 @@ namespace EntregaParcialUno.UI.Registros
             MessageBox.Show("Usuario no encontrado");
 
         }
+        private void CalcularValor()
+        {
+            if(CostoNumericUpDown.Value >0 && ExistenciaNumericUpDown.Value > 0)
+            {
+                ValorInventarioTextBox.Text = Convert.ToString(CostoNumericUpDown.Value * ExistenciaNumericUpDown.Value);
+    }
+}
+
+        private void ValorInventarioTextBox_TextChanged(object sender, EventArgs e)
+        {
+            CalcularValor();
+        }
+
+        private void CostoNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            CalcularValor();
+        }
+
+
     }
 }
