@@ -39,7 +39,7 @@ namespace EntregaParcialUno.UI.Registros
             producto.Descripcion = DescripcionTextBox.Text;
             producto.Existencia =(int)ExistenciaNumericUpDown.Value; ;
             producto.Costo = CostoNumericUpDown.Value;
-            producto.ValorInventario = Convert.ToDecimal(ValorInventarioTextBox);
+            producto.ValorInventario = Convert.ToDecimal(ValorInventarioTextBox.Text);
             return producto;
 
         }
@@ -108,6 +108,11 @@ namespace EntregaParcialUno.UI.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
+            if (!ExisteEnLaBaseDeDatos())
+            {
+                MessageBox.Show("No se puede Eliminar un usuario que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             MyErrorProvider.Clear();
             int id;
             int.TryParse(IdNumericUpDown.Text, out id);
