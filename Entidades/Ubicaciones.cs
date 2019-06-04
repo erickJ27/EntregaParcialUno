@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace EntregaParcialUno.Entidades
 {
-    public class Ubicacion
+    public class Ubicaciones
     {
         [Key]
-        public int Id { get; set; }
+        public int UbicacionId { get; set; }
         public string Descripcion { get; set; }
 
-        public Ubicacion()
+        public Ubicaciones()
         {
-            Id = 0;
+            UbicacionId = 0;
             Descripcion = string.Empty;
         }
     }

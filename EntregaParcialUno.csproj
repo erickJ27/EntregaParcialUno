@@ -54,12 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\ProductosBLL.cs" />
-    <Compile Include="BLL\UbicacionBLL.cs" />
+    <Compile Include="BLL\UbicacionesBLL.cs" />
     <Compile Include="BLL\ValorInventarioBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Productos.cs" />
-    <Compile Include="Entidades\Ubicacion.cs" />
-    <Compile Include="Entidades\Validar.cs" />
+    <Compile Include="Entidades\Ubicaciones.cs" />
     <Compile Include="Entidades\ValorInventario.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -81,11 +80,11 @@
     <Compile Include="UI\Registros\rProductos.Designer.cs">
       <DependentUpon>rProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\rUbicacion.cs">
+    <Compile Include="UI\Registros\rUbicaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\rUbicacion.Designer.cs">
-      <DependentUpon>rUbicacion.cs</DependentUpon>
+    <Compile Include="UI\Registros\rUbicaciones.Designer.cs">
+      <DependentUpon>rUbicaciones.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -106,8 +105,8 @@
     <EmbeddedResource Include="UI\Registros\rProductos.resx">
       <DependentUpon>rProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\rUbicacion.resx">
-      <DependentUpon>rUbicacion.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Registros\rUbicaciones.resx">
+      <DependentUpon>rUbicaciones.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

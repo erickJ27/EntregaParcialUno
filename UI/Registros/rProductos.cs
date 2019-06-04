@@ -17,6 +17,7 @@ namespace EntregaParcialUno.UI.Registros
         public rProductos()
         {
             InitializeComponent();
+            ListadoUbicacion();
         }
         private void Limpiar()
         {
@@ -182,13 +183,22 @@ namespace EntregaParcialUno.UI.Registros
 
         private void UbicacionButton_Click(object sender, EventArgs e)
         {
-            rUbicacion ubi = new rUbicacion();
+            rUbicaciones ubi = new rUbicaciones();
             ubi.ShowDialog();
         }
 
-        
+        private void ListadoUbicacion()
+        {
+            var listado = new List<Ubicaciones>();
 
-        
+            listado = UbicacionesBLL.GetList(p => true);
+            UbicacionComboBox.DataSource = listado;
+            UbicacionComboBox.DisplayMember = "Ubicacion";
+            UbicacionComboBox.ValueMember = "Descripcion";
+
+        }
+
+
     }
 }
 

@@ -12,9 +12,9 @@ using EntregaParcialUno.BLL;
 
 namespace EntregaParcialUno.UI.Registros
 {
-    public partial class rUbicacion : Form
+    public partial class rUbicaciones : Form
     {
-        public rUbicacion()
+        public rUbicaciones()
         {
             InitializeComponent();
         }
@@ -27,17 +27,17 @@ namespace EntregaParcialUno.UI.Registros
         {
             Limpiar();
         }
-        private Ubicacion LlenarClase()
+        private Ubicaciones LlenarClase()
         {
-            Ubicacion ubicacion = new Ubicacion();
-            ubicacion.Id = (int)IdNumericUpDown.Value;
+            Ubicaciones ubicacion = new Ubicaciones();
+            ubicacion.UbicacionId = (int)IdNumericUpDown.Value;
             ubicacion.Descripcion = DescripcionTextBox.Text;
             return ubicacion;
         }
 
         private bool ExistenteEnLaBaseDeDatos()
         {
-            Ubicacion ubicacion = UbicacionBLL.Buscar((int)IdNumericUpDown.Value);
+            Ubicaciones ubicacion = UbicacionesBLL.Buscar((int)IdNumericUpDown.Value);
             return (ubicacion != null);
         }
 
@@ -59,7 +59,7 @@ namespace EntregaParcialUno.UI.Registros
         }
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            Ubicacion ubicacion;
+            Ubicaciones ubicacion;
             bool paso = false;
 
             if (!validar())
@@ -69,7 +69,7 @@ namespace EntregaParcialUno.UI.Registros
             Limpiar();
 
             if (IdNumericUpDown.Value == 0)
-                paso = UbicacionBLL.Guardar(ubicacion);
+                paso = UbicacionesBLL.Guardar(ubicacion);
             else
             {
                 if (!ExistenteEnLaBaseDeDatos())
@@ -77,7 +77,7 @@ namespace EntregaParcialUno.UI.Registros
                     MessageBox.Show("No se puede modificar una ubicacion que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                paso = UbicacionBLL.Modificar(ubicacion);
+                paso = UbicacionesBLL.Modificar(ubicacion);
 
             }
 
@@ -101,7 +101,7 @@ namespace EntregaParcialUno.UI.Registros
 
 
 
-            if (UbicacionBLL.Eliminar(id))
+            if (UbicacionesBLL.Eliminar(id))
 
                 MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -111,18 +111,18 @@ namespace EntregaParcialUno.UI.Registros
 
 
         }
-        private void LlenarCampo(Ubicacion ubicacion)
+        private void LlenarCampo(Ubicaciones ubicacion)
         {
-            IdNumericUpDown.Value = ubicacion.Id;
+            IdNumericUpDown.Value = ubicacion.UbicacionId;
             DescripcionTextBox.Text = ubicacion.Descripcion;
         }
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             int id;
-            Ubicacion ubicacion = new Ubicacion();
+            Ubicaciones ubicacion = new Ubicaciones();
             int.TryParse(IdNumericUpDown.Text, out id);
             Limpiar();
-            ubicacion = UbicacionBLL.Buscar(id);
+            ubicacion = UbicacionesBLL.Buscar(id);
 
             if (ubicacion != null)
             {
@@ -132,5 +132,6 @@ namespace EntregaParcialUno.UI.Registros
             else
                 MessageBox.Show("Ubicacion no encontrado");
         }
+        
     }
 }

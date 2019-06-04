@@ -1,6 +1,6 @@
 ﻿namespace EntregaParcialUno.UI.Registros
 {
-    partial class rUbicacion
+    partial class rUbicaciones
     {
         /// <summary>
         /// Required designer variable.

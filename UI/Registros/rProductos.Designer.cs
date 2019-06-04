@@ -37,7 +37,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.UbicacionButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.UbicacionComboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.CostoNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ExistenciaNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -104,7 +104,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.UbicacionButton);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.UbicacionComboBox);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.CostoNumericUpDown);
             this.groupBox1.Controls.Add(this.ExistenciaNumericUpDown);
@@ -136,14 +136,13 @@
             this.UbicacionButton.UseVisualStyleBackColor = true;
             this.UbicacionButton.Click += new System.EventHandler(this.UbicacionButton_Click);
             // 
-            // comboBox1
+            // UbicacionComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(115, 121);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(138, 21);
-            this.comboBox1.TabIndex = 11;
-            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.UbicacionButton_Click);
+            this.UbicacionComboBox.FormattingEnabled = true;
+            this.UbicacionComboBox.Location = new System.Drawing.Point(115, 121);
+            this.UbicacionComboBox.Name = "UbicacionComboBox";
+            this.UbicacionComboBox.Size = new System.Drawing.Size(138, 21);
+            this.UbicacionComboBox.TabIndex = 11;
             // 
             // label6
             // 
@@ -258,7 +257,6 @@
             this.Name = "rProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de productos";
-            this.Load += new System.EventHandler(this.UbicacionButton_Click);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CostoNumericUpDown)).EndInit();
@@ -288,7 +286,7 @@
         private System.Windows.Forms.NumericUpDown CostoNumericUpDown;
         private System.Windows.Forms.NumericUpDown ExistenciaNumericUpDown;
         private System.Windows.Forms.Button UbicacionButton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox UbicacionComboBox;
         private System.Windows.Forms.Label label6;
     }
 }
